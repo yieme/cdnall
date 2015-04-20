@@ -1,0 +1,35 @@
+{
+  "name": "cdnall",
+  "version": "1.0.0",
+  "description": "Simplified public CDN",
+  "main": "index.js",
+  "dependencies": {
+    "firebase": "^2.2.4",
+    "koa": "^0.19.1",
+    "koa-route": "^2.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://yieme@github.com/yieme/cdnall.git"
+  },
+  "keywords": [
+    "cdnjs",
+    "jsdelivr",
+    "osscdn",
+    "maxcdn",
+    "google",
+    "microsoft",
+    "bootstrap",
+    "jquery"
+  ],
+  "author": "yieme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yieme/cdnall/issues"
+  },
+  "homepage": "https://github.com/yieme/cdnall"
+}
