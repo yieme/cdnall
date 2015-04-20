@@ -1,0 +1,2 @@
+# cdnall
+Simplified public CDN
