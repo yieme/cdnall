@@ -1,6 +1,4 @@
-<span style="background: url(img/tiny-grid.png)">
-
-# CDN All <img src="./img/logo.png" align="right" height="185" border="0" />
+# CDN All <img src="https://raw.githubusercontent.com/yieme/cdnall/master/img/logo.png" align="right" height="185" border="0" />
 
 Simplified public CDN server
 
