@@ -1,20 +1,30 @@
 {
   "name": "cdnall",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Simplified public CDN",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
+    "ceo-logger": "^1.0.2",
+    "convar": "^1.1.6",
+    "express": "^4.12.3",
     "firebase": "^2.2.4",
-    "koa": "^0.19.1",
-    "koa-route": "^2.4.1"
+    "firebase-init": "^1.3.2",
+    "koa-static": "^1.4.9",
+    "request": "^2.55.0",
+    "semver": "^4.3.3",
+    "string": "^3.1.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "exit 0"
+    "test": "exit 0",
+    "start": "node server.js -- --port=$PORT --firebase=$FIREBASE"
   },
   "repository": {
     "type": "git",
     "url": "https://yieme@github.com/yieme/cdnall.git"
+  },
+  "engines": {
+    "node": "0.10.x"
   },
   "keywords": [
     "cdnjs",
