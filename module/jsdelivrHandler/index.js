@@ -1,3 +1,5 @@
+'use strict';
+
 var semver = require('semver')
 /*
 "PACKAGE_NAME": {
@@ -13,13 +15,13 @@ var semver = require('semver')
   }
 } */
 
+
 String.prototype.endsWith = function(suffix) {
     return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
 
 function guessMainFile(packname, files) {
   if (packname.endsWith('.js')) packname = packname.substr(0, -3) // drop .js from package name
-  var result  = undefined
   var guesses = []
   guesses.push(packname + '.min.js')
   guesses.push(packname + '.js')
@@ -65,7 +67,7 @@ function jsdelivrHandler(db, pack, cdnName) {
   }
 
   var bothValid  = semver.valid(pack.lastversion) && semver.valid(dbPack.latest)
-  if (dbPack.latest == "" || (bothValid && semver.gt(pack.lastversion, dbPack.latest)) || (!bothValid && pack.lastversion < dbPack.latest)) {
+  if (dbPack.latest === "" || (bothValid && semver.gt(pack.lastversion, dbPack.latest)) || (!bothValid && pack.lastversion < dbPack.latest)) {
     dbPack.latest = pack.lastversion
   }
   var mainfile

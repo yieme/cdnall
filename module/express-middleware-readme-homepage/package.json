@@ -1,0 +1,12 @@
+{
+  "name": "express-middleware-readme-homepage",
+  "version": "0.1.0",
+  "description": "Express Middleware Readme Markdown Homepage",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "keywords": ["express", "middleware", "readme", "showdown", "homepage"],
+  "author": "yieme",
+  "license": "MIT"
+}

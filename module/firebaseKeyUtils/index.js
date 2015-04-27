@@ -1,3 +1,5 @@
+/*jshint forin: false */
+'use strict';
 var S = require('string')
 
 function safeKey(key) {
@@ -5,7 +7,7 @@ function safeKey(key) {
 }
 
 function restoreKey(safeKey) {
-  return S(key).replaceAll(':', '.').s
+  return S(safeKey).replaceAll(':', '.').s
 }
 
 function safeKeys(obj) {

@@ -1,3 +1,5 @@
+'use strict';
+
 var Logger   = require('ceo-logger')
 var log      = new Logger({}, false)
 var request         = require('request')
