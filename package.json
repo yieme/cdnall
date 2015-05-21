@@ -28,7 +28,7 @@
     "should": "^6.0.1"
   },
   "scripts": {
-    "test": "jshint --config .jshintrc . && mocha -R list test/*.js",
+    "test": "mocha -R list test/*.js",
     "start": "node server.js -- --port=$PORT --firebase=$FIREBASE"
   },
   "repository": {
