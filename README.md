@@ -1,4 +1,4 @@
-# CDN All <img src="https://raw.githubusercontent.com/yieme/cdnall/master/img/logo.png" align="right" height="185" border="0" />
+# CDN All
 
 Unified CDN server with all the package versions from top public CDN's plus bundling
 
