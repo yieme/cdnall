@@ -1,6 +1,6 @@
 {
   "name": "cdnall",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Unified CDN server with all the package versions from top public CDN's plus bundling",
   "main": "server.js",
   "dependencies": {
