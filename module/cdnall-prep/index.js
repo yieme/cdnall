@@ -8,6 +8,12 @@ var FOLDER_SEPERATOR  = '/'
 var S         = require('string')
 
 function cdnallPack(req, res, next) {
+  if (req.method != 'GET') {
+    res.locals.statusCode = 404
+    res.status(404).send('Not Found')
+    return
+  }
+
   var path  = res.locals.path || req.path
 
   // set debug flag

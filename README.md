@@ -4,6 +4,8 @@ Unified CDN server with all the package versions from top public CDN's plus bund
 
 Standardized naming and straight CDN access for development or production without having to check each service to see if it has the package you're after.
 
+## Project Replaced by [Pakr](https://github.com/yieme/pakr)
+
 It acts as a public CDN redirect or local cache of a public CDN, NPM, GitHub and Bower packages so you can simplify or ignore the backend chain while developing your front end.
 
 Optional ```github```, ```npm``` and ```bower``` packages.

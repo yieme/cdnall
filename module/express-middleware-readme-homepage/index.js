@@ -18,9 +18,11 @@ function cdnallHomepage(req, res, next) {
       }
       page = template.render(data)
     }
-    res.send(page)
+    res.locals.statusCode = 200
+    res.status(200).send(page)
   } else if (req.path == '/favicon.ico') {
-    res.status(404)
+    res.locals.statusCode = 404
+    res.status(404).send('Not Found')
   } else {
     next()
   }

@@ -33,6 +33,7 @@ function cdnallApiVersions(req, res, next) {
     }
     res.set('Content-Type', 'application/json') // JSONP: application/javascript
     var pretty_json = JSON.stringify(result, null, 2)
+    res.locals.statusCode = 200
     res.status(200).send(pretty_json)
   } else {
     next()

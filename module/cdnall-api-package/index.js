@@ -8,7 +8,7 @@ var apiUrl    = '/api/package/'
 function packDetails(name, pack, selectVersion) {
   var selectVersionLength = (selectVersion) ? selectVersion.length : 0
   var versionCount = 0
-  var result = { name: name, versions: {} }
+  var result = { name: name, latest: '', cdn:'', versions: {} }
   for (var i in pack) {
     if (ignore.indexOf(i) < 0) {
       var version = S(i).replaceAll(':', '.').s
@@ -18,6 +18,7 @@ function packDetails(name, pack, selectVersion) {
       }
     }
   }
+  result.latest = pack.latest
   result.cdn   = pack.cdn
   result.files = pack.files
   result.mains = pack.mains
@@ -36,6 +37,7 @@ function cdnallApiPackage(req, res, next) {
     if (!pack) pack = null
     res.set('Content-Type', 'application/json') // JSONP: application/javascript
     var pretty_json = JSON.stringify(pack, null, 2)
+    res.locals.statusCode = 200
     res.status(200).send(pretty_json)
   } else {
     next()

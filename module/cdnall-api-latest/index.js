@@ -21,12 +21,13 @@ function cdnallApiLatest(req, res, next) {
         var lower     = cleanname.toLowerCase()
         if (S(lower).contains(search)) {
           var pack = latestPack(cleanname, packages[packname])
-          if (pack) result.push(pack)
+          if (pack && result.indexOf(pack) < 0) result.push(pack)
         }
       }
     }
     res.set('Content-Type', 'application/json') // JSONP: application/javascript
     var pretty_json = JSON.stringify(result, null, 2)
+    res.locals.statusCode = 200
     res.status(200).send(pretty_json)
   } else {
     next()

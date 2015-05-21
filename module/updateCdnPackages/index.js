@@ -1,5 +1,6 @@
 'use strict';
 
+var _        = require('lodash')
 var Logger   = require('ceo-logger')
 var log      = new Logger({}, false)
 var request         = require('request')
@@ -15,6 +16,7 @@ var cdnList         = [ // initial reference: http://sixrevisions.com/resources/
   //  { name: 'microsoft', handler: microsoftHandler }, // http://www.asp.net/ajax/cdn,  ex: http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js
   //  { name: 'oss', handler: ossHandler }, // http://osscdn.com/#/
 ]
+var statistics  = []
 var db          = {} /*
 package_database = { // lowercase is literal, uppercase is variable
   "available": {
@@ -57,13 +59,23 @@ function getDataAndProcess(cdn, handler, callback) {
     } else {
       log.info(url + ' loaded')
       var data = JSON.parse(body)
+      var versions = 0
       for (var i=0; i<data.length; i++) {
         db = handler(db, data[i], cdn)
+        versions = versions + data[i].assets.length - 1
       }
-      log.info(url + ' processed')
+      var stats = { cdn: cdn, packages: data.length, versions: versions }
+      statistics.push(stats)
+      log.info(url + ' processed. ' + JSON.stringify(stats) )
     }
     callback(null)
   })
 }
 
+function stats(reset) {
+  if (reset) statistics = []
+  return statistics
+}
+
 module.exports = updateCdnPackages
+module.exports.stats = stats

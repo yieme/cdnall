@@ -62,8 +62,8 @@ function jsdelivrHandler(db, pack, cdnName) {
   var dbPack = db.packages[pack.name] || {
     cdn: cdnName,
     latest: "",
-    files: [],
-    mains: []
+    files:  [],
+    mains:  []
   }
 
   var bothValid  = semver.valid(pack.lastversion) && semver.valid(dbPack.latest)
@@ -101,6 +101,8 @@ function jsdelivrHandler(db, pack, cdnName) {
     }
   }
 
+  dbPack.description     = pack.description
+  dbPack.homepage        = pack.homepage
   db.packages[pack.name] = dbPack
   return db
 }
